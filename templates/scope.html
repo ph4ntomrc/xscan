@@ -3,11 +3,12 @@
 <head>
 </head>
 <body>
+	Your scope (in scope.txt):<br>
 	{% for para in scope_text %}
      		<p>{{para}}</p>
  	{% endfor %}
 	<form action="/scope" method="POST">
-		<input type="text" placeholder="Domain" name="scope">
+		<input type="text" placeholder="Domain (e. g. google.com)" name="scope">
 		<input type="Submit" value="Add">
 	</form>
 </body>
