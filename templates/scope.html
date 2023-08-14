@@ -3,10 +3,12 @@
 <head>
 </head>
 <body>
-	<form action="/edit-scope" method="POST">
-		<input type="text" placeholder="Domain">
-		<input type="button" value="+"><br>
-		<input type="submit" value="save">
+	{% for para in scope_text %}
+     		<p>{{para}}</p>
+ 	{% endfor %}
+	<form action="/scope" method="POST">
+		<input type="text" placeholder="Domain" name="scope">
+		<input type="Submit" value="Add">
 	</form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,9 +6,15 @@ app = Flask(__name__)
 def main():
 	return render_template("index.html")
 
-@app.route("/scope")
+@app.route("/scope", methods = ['POST', 'GET'])
 def scope():
-        return render_template("scope.html")
+	if request.method == 'POST':
+		with open('scope.txt', 'a') as f:
+			f.write(request.form['scope'] + '\n')
+	with open('scope.txt', 'r') as f:
+		scope = f.read().split("\n")
+	return render_template("scope.html", scope_text=scope)
+
 
 @app.route("/scan-info")
 def scan_info():
@@ -25,6 +31,4 @@ def exploits():
 @app.route("/settings")
 def settings():
         return render_template("index.html")
-
-
 app.run()
