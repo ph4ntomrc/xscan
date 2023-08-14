@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -31,4 +31,11 @@ def exploits():
 @app.route("/settings")
 def settings():
         return render_template("index.html")
+@app.route("/clear", methods=['POST'])
+def clear_scope():
+	if request.method == 'POST':
+		with open('scope.txt', 'w') as f:
+			f.write('')
+	return redirect('/scope')
 app.run()
+
