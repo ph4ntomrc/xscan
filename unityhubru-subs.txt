@@ -1,0 +1,19 @@
+===============================================================
+Gobuster v3.5
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:          http://FUZZ.unityhub.ru
+[+] Method:       GET
+[+] Threads:      10
+[+] Wordlist:     wordlists/subs.txt
+[+] User Agent:   gobuster/3.5
+[+] Timeout:      10s
+===============================================================
+2023/08/14 22:48:14 Starting gobuster in fuzzing mode
+===============================================================
+
+[!] Keyboard interrupt detected, terminating.
+
+===============================================================
+2023/08/14 22:48:15 Finished
+===============================================================
